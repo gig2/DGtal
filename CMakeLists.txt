@@ -73,3 +73,12 @@ INCLUDE(Install)
 # Unzip and install topology Look up Tables.
 # -----------------------------------------------------------------------------
 INCLUDE(NeighborhoodTablesConfig)
+
+# Generate dgtal.pc file
+set(DEST_DIR "${CMAKE_INSTALL_PREFIX}")
+set(PRIVATE_LIBS "-lDGtal")
+
+configure_file("dgtal.pc.in" "${CMAKE_CURRENT_BINARY_DIR}/dgtal.pc" @ONLY)
+
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/dgtal.pc DESTINATION ${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig)
+

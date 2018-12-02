@@ -1,0 +1,11 @@
+prefix=@DEST_DIR@
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libDGtal
+Description: DGtal is a generic open source library for Digital Geometry programming
+Version: @DGTAL_VERSION@
+
+Libs: -L${libdir} @PRIVATE_LIBS@
+Cflags: -I${includedir}
